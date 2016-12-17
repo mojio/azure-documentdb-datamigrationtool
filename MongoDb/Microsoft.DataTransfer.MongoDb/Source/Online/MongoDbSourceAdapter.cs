@@ -31,6 +31,7 @@ namespace Microsoft.DataTransfer.MongoDb.Source.Online
 
         public async Task Initialize(CancellationToken cancellation)
         {
+            MongoDefaults.GuidRepresentation = GuidRepresentation.Standard;
             var url = new MongoUrl(configuration.ConnectionString);
 
             FindOptions<BsonDocument, BsonDocument> options = null;
